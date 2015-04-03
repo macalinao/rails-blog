@@ -1,14 +1,12 @@
 
 <p><%= link_to 'New', new_article_path %></p>
 
-<div class="container">
 <% @articles.each do |article| %>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
       <h1><%= link_to article.title, article %></h1>
       <p class="info">Posted on <%= article.created_at.strftime '%D at %l:%M %p' %></p>
       <p><%= article.text %></p>
     </div>
   </div>
 <% end %>
-</div>
