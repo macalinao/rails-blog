@@ -1,6 +1,10 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1.article-title a {
+  color: #000;
+}
+
 h1.article-title .fa {
   font-size: 22px;
   color: #aaa;

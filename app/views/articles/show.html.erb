@@ -1,14 +1,7 @@
+<%= render @article %>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h1 class="article-title">
-      <%= @article.title %>
-      <div class="admin-btns">
-        <%= link_to edit_article_path do %><i class="fa fa-edit"></i><% end %>
-        <%= link_to article_path, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %>
-      </div>
-    </h1>
-    <p class="info">Posted on <%= @article.created_at.strftime '%D at %l:%M %p' %></p>
-    <p><%= @article.text %></p>
 
     <h2>Comments</h2>
     <%= render @article.comments %>
