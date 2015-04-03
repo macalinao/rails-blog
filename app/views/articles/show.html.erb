@@ -1,10 +1,14 @@
-<h1><%= @article.title %></h1>
-<p><%= link_to 'Edit', edit_article_path %></p>
-<p><%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<p><%= @article.text %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1><%= @article.title %></h1>
+    <p><%= link_to 'Edit', edit_article_path %></p>
+    <p><%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p><%= @article.text %></p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+    <h2>Comments</h2>
+    <%= render @article.comments %>
 
-<h3>Write a response...</h3>
-<%= render 'comments/form' %>
+    <h3>Write a response...</h3>
+    <%= render 'comments/form' %>
+  </div>
+</div>
