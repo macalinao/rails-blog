@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'registrations' }
 
-  resources :articles do
+  resources :articles, except: :index do
     resources :comments
   end
 
-  root 'welcome#index'
+  root 'articles#index'
 end
