@@ -7,7 +7,12 @@
         <%= link_to article_path(article), method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash-o"></i><% end %>
       </div>
     </h1>
-    <p class="info">Posted on <%= article.created_at.strftime '%D at %l:%M %p' %></p>
+    <p class="info">
+      Posted on <%= article.created_at.strftime '%D at %l:%M %p' %>
+      <% if article.user %>
+        by <%= link_to article.user.username, article.user %>
+      <% end %>
+    </p>
     <p><%= article.text %></p>
   </div>
 </div>
