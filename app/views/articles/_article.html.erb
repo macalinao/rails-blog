@@ -8,9 +8,9 @@
       </div>
     </h1>
     <p class="info">
-      Posted on <%= article.created_at.strftime '%D at %l:%M %p' %>
+      Posted on <em><%= article.created_at.strftime '%D at %l:%M %p' %></em>
       <% if article.user %>
-        by <%= link_to article.user.username, article.user %>
+        by <strong><%= article.user.username %></strong>
       <% end %>
     </p>
     <p><%= article.text %></p>
