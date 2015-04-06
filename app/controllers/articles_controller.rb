@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.order(created_at: :desc).page(params[:page])
     respond_to do |f|
       f.html
       f.json { render json: @articles.to_json }
