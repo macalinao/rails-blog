@@ -12,6 +12,14 @@
   <div class="row">
     <header class="col-md-6 col-md-offset-3">
       <h1 id="title"><%= link_to "ian's blog.", articles_path %></h1>
+      <ul class="nav nav-pills">
+        <li><%= link_to 'New post', new_article_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete  %></li>
+        <% else %>
+          <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <% end %>
+      </ul>
     </header>
   </div>
   <%= yield %>
