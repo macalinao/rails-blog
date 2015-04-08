@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/partial_page', to: 'articles#page'
+
   root 'articles#index'
 end

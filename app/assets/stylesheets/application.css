@@ -6,3 +6,9 @@
 header #title {
   font-size: 7em;
 }
+
+#infiniteScroll {
+  margin: 100px auto;
+  font-size: 28px;
+  color: #555;
+}

@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :page]
 
   def new
     @article = Article.new
@@ -46,6 +46,13 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
+  end
+
+  def page
+    @articles = Article.order(created_at: :desc).page(params[:page])
+    respond_to do |f|
+      f.html { render @articles, layout: false }
+    end
   end
 
   private
